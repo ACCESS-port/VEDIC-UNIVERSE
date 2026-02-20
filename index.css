@@ -1,0 +1,34 @@
+body {
+    background: linear-gradient(to right , red, blue);
+    margin: 0px;
+    padding: 0px;
+} 
+
+.welcome{
+    border-radius: 15px;
+    background: linear-gradient(to right , blue,black );
+    padding: 5px;
+    margin-right: 50%;
+    margin-left: 20px;
+    border: 2px solid orangered;
+    color: green;
+}
+
+.chalisha{  
+    background-color: cyan;
+padding: 10px;
+margin-left: 25px;
+text-decoration: none;
+color:green;
+font-weight: bold;
+border-radius: 15px;
+   
+}
+
+.chalisha:hover{
+    background: linear-gradient(to right , green,red);
+    color: white;
+    text-decoration: underline;
+    padding: 15px;
+    transition: 0.3s;
+}

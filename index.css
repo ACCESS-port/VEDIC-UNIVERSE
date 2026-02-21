@@ -16,6 +16,7 @@ body {
 
 .chalisha{  
     background-color: cyan;
+    border: 2px solid red;
 padding: 10px;
 margin-left: 25px;
 text-decoration: none;
@@ -31,4 +32,42 @@ border-radius: 15px;
     text-decoration: underline;
     padding: 15px;
     transition: 0.3s;
+}
+
+.ramayana1{
+    text-decoration: none;
+    border: 2px solid red;
+    margin: 10px;
+    border-radius: 15px;
+    color: green;
+    background-color: aqua;
+    padding: 10px;
+}
+
+.ramayana1:hover{
+    padding:15px ;
+    transition: 0.3s;
+    background: linear-gradient(to right , green,red);
+    color: white;
+    text-decoration: underline;
+    
+}
+
+.ramayana2{
+    text-decoration: none;
+    border: 2px solid red;
+    margin: 10px;
+    border-radius: 15px;
+    color: green;
+    background-color: aqua;
+    padding: 10px;
+}
+
+.ramayana2:hover{
+    padding:15px ;
+    transition: 0.3s;
+    background: linear-gradient(to right , green,red);
+    color: white;
+    text-decoration: underline;
+    
 }

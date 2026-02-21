@@ -23,6 +23,11 @@ text-decoration: none;
 color:green;
 font-weight: bold;
 border-radius: 15px;
+padding-top: 10px;
+padding-bottom: 20px;
+display: block;
+margin-bottom: 10px;
+
    
 }
 
@@ -70,4 +75,22 @@ border-radius: 15px;
     color: white;
     text-decoration: underline;
     
+}
+
+.ramayana{
+    background-color: blue;
+    padding: 5px;
+    display: flex;
+    margin-top: 5px;
+    justify-content: center;
+    margin-left: 30px;
+    margin-top:0px ;
+    margin-right: 800px;
+    border-radius: 15px;
+    
+}
+
+.hindi{
+    color: white;
+    display: flex;
 }

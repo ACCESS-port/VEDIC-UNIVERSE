@@ -1,113 +1,113 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
 body {
-    background: linear-gradient(to right , red, blue);
-    margin: 0px;
-    padding: 0px;
-} 
-
-.welcome{
-    border-radius: 15px;
-    background: linear-gradient(to right , blue,black );
-    padding: 5px;
-    margin-right: 50%;
-    margin-left: 20px;
-    border: 2px solid orangered;
-    color: green;
-}
-
-.chalisha{  
-    background-color: cyan;
-    border: 2px solid red;
-padding: 10px;
-margin-left: 25px;
-text-decoration: none;
-color:green;
-font-weight: bold;
-border-radius: 15px;
-padding-top: 10px;
-padding-bottom: 20px;
-display: block;
-margin-bottom: 10px;
-
-   
-}
-
-.chalisha:hover{
-    background: linear-gradient(to right , green,red);
-    color: white;
-    text-decoration: underline;
-    padding: 15px;
-    transition: 0.3s;
-}
-
-.ramayana1{
-    text-decoration: none;
-    border: 2px solid red;
-    margin: 10px;
-    border-radius: 15px;
-    color: green;
-    background-color: aqua;
-    padding: 10px;
-}
-
-.ramayana1:hover{
-    padding:15px ;
-    transition: 0.3s;
-    background: linear-gradient(to right , green,red);
-    color: white;
-    text-decoration: underline;
-    
-}
-
-.ramayana2{
-    text-decoration: none;
-    border: 2px solid red;
-    margin: 10px;
-    border-radius: 15px;
-    color: green;
-    background-color: aqua;
-    padding: 10px;
-}
-
-.ramayana2:hover{
-    padding:15px ;
-    transition: 0.3s;
-    background: linear-gradient(to right , green,red);
-    color: white;
-    text-decoration: underline;
-    
-}
-
-.ramayana{
-    background-color: blue;
-    padding: 5px;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #ff4e50, #1e3c72);
     display: flex;
-    margin-top: 5px;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+/* Welcome Heading */
+.welcome {
+    background: linear-gradient(90deg, #000428, #004e92);
+    color: #00ff88;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px solid orange;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Hanuman Chalisha Button */
+.chalisha {
+    background: #00e5ff;
+    color: #003300;
+    text-decoration: none;
+    padding: 18px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.chalisha:hover {
+    background: linear-gradient(to right, #00c853, #ff1744);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Ramayana Section */
+.ramayana {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-left: 30px;
-    margin-top:0px ;
-    margin-right: 800px;
-    border-radius: 15px;
-    
+    gap: 15px;
 }
 
-.hindi{
+/* Hindi Text */
+.hindi {
+    width: 100%;
     color: white;
-    display: flex;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
+/* Ramayana Buttons */
+.ramayana1,
+.ramayana2 {
+    text-decoration: none;
+    background: #00e5ff;
+    color: #003300;
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
 
+.ramayana1:hover,
+.ramayana2:hover {
+    background: linear-gradient(to right, #00c853, #ff1744);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
 
-  .container {
-    flex-direction: column;
-  }
+    .welcome {
+        font-size: 20px;
+        padding: 15px;
+    }
 
-  .box {
-    width: 100%;
-  }
+    .chalisha {
+        width: 90%;
+        text-align: center;
+    }
 
-  body {
-    font-size: 14px;
-  }
-
+    .ramayana1,
+    .ramayana2 {
+        width: 90%;
+    }
 }

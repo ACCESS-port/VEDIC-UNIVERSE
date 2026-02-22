@@ -1,17 +1,31 @@
-body{
-    background-image: url(vedic.jpeg);
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("vedic.jpeg");
+    background-size: cover;        
+    background-position: center;   
+    background-repeat: no-repeat;  
+    background-attachment: fixed;  
+    min-height: 100vh;
+
+    /* ADD THIS */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* CHANGED WIDTH + REMOVED MARGIN-LEFT */
 .loginpage{
     background-color: aqua;
-    width: 50vh;
-    padding: 50px;
+    width: 90%;              /* changed */
+    max-width: 400px;        /* added */
+    padding: 30px;           /* slightly reduced */
     text-align: center;
-    margin: 100px;
-    margin-left: 400px;
     border: 2px solid red;
     border-radius: 10px;
-    margin-top: 150px;
 }
+
+/* Keep same */
 .login{
     background: linear-gradient(to right, green,blue);
     color: white;
@@ -20,30 +34,27 @@ body{
     margin-bottom: 20px;
     margin-top: 5px;
     padding: 10px;
-
 }
+
 .details{
     background-color: brown;
     border-radius: 10px;
     color:white;
     border: 2px solid blue;
     margin: 5px;
-    
+    padding: 15px;   /* small improvement */
 }
 
-
+/* FIXED MEDIA QUERY */
 @media (max-width: 768px) {
-
-  .container {
-    flex-direction: column;
-  }
-
-  .box {
-    width: 100%;
-  }
 
   body {
     font-size: 14px;
+    background-attachment: scroll; /* important for mobile */
   }
 
+  .loginpage {
+    width: 95%;
+    padding: 20px;
+  }
 }

@@ -30,3 +30,20 @@ body{
     margin: 5px;
     
 }
+
+
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .box {
+    width: 100%;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+}

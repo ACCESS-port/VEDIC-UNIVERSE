@@ -1,3 +1,6 @@
+/* Import Modern Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cinzel:wght@700&display=swap');
+
 /* Reset */
 * {
     margin: 0;
@@ -8,106 +11,243 @@
 /* Body */
 body {
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #ff4e50, #1e3c72);
+    font-family: 'Poppins', sans-serif;
+    /* Modern Cosmic Gradient */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-attachment: fixed; /* Parallax Effect */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px 15px;
+    padding: 0 0 50px 0;
+    color: #fff;
 }
 
-/* Welcome Heading */
-.welcome {
-    background: linear-gradient(90deg, #000428, #004e92);
-    color: #00ff88;
-    padding: 20px;
-    border-radius: 20px;
-    border: 3px solid orange;
-    text-align: center;
+/* --- Navbar Styling --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    max-width: 500px;
-    margin-bottom: 40px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    max-width: 1200px;
+    padding: 20px 60px;
+    margin-bottom: 30px;
+    
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* Hanuman Chalisha Button */
-.chalisha {
-    background: #00e5ff;
-    color: #003300;
-    text-decoration: none;
-    padding: 18px 30px;
-    border-radius: 30px;
+/* Logo */
+.logo {
+    font-family: 'Cinzel', serif; /* Elegant Serif Font */
+    color: #FFD700; /* Gold */
+    font-size: 28px;
     font-weight: bold;
-    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
     transition: all 0.3s ease;
-    display: inline-block;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 50px;
+    position: relative;
 }
 
-.chalisha:hover {
-    background: linear-gradient(to right, #00c853, #ff1744);
-    color: white;
-    transform: scale(1.05);
+/* Hover Effect - Gold Glow */
+.nav-links a:hover {
+    color: #FFD700;
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
 }
 
-/* Ramayana Section */
-.ramayana {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 25px;
+/* --- Welcome Heading --- */
+.welcome {
+    /* Glass Card Style */
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 5px solid #FFD700; /* Decorative Gold Border */
+    
+    color: #fff;
+    padding: 40px 30px;
     border-radius: 20px;
     text-align: center;
     width: 100%;
     max-width: 600px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.welcome:hover {
+    transform: translateY(-5px);
+}
+
+/* Optional: Adding a glow behind the welcome box using pseudo-element */
+.welcome::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(0, 78, 146, 0.2), transparent 70%);
+    z-index: -1;
+}
+
+/* --- Hanuman Chalisha Button --- */
+.chalisha {
+    /* Saffron/Orange Gradient */
+    background: linear-gradient(135deg, #f12711, #f5af19);
+    color: white;
+    text-decoration: none;
+    padding: 18px 50px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 10px 20px rgba(241, 39, 17, 0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.chalisha:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 15px 30px rgba(241, 39, 17, 0.6);
+    filter: brightness(1.1);
+}
+
+/* --- Ramayana Section --- */
+.ramayana {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* Hindi Text */
 .hindi {
     width: 100%;
-    color: white;
+    color: #FFD700; /* Gold Color */
+    font-family: 'Cinzel', serif;
     font-weight: bold;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 24px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    padding-bottom: 20px;
 }
 
 /* Ramayana Buttons */
 .ramayana1,
 .ramayana2 {
     text-decoration: none;
-    background: #00e5ff;
-    color: #003300;
-    padding: 15px 25px;
-    border-radius: 25px;
+    /* Outline Style Button */
+    background: transparent;
+    border: 2px solid #00e5ff;
+    color: #00e5ff;
+    padding: 15px 40px;
+    border-radius: 50px;
     font-weight: bold;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Fill effect on hover using pseudo-element */
+.ramayana1::before,
+.ramayana2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #00e5ff;
+    z-index: -1;
+    transition: width 0.3s ease;
 }
 
 .ramayana1:hover,
 .ramayana2:hover {
-    background: linear-gradient(to right, #00c853, #ff1744);
-    color: white;
-    transform: scale(1.05);
+    color: #003300; /* Dark text on hover */
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.ramayana1:hover::before,
+.ramayana2:hover::before {
+    width: 100%;
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        background: rgba(15, 12, 41, 0.95);
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
     .welcome {
-        font-size: 20px;
-        padding: 15px;
+        width: 90%;
+        font-size: 18px;
+        padding: 30px 20px;
     }
 
     .chalisha {
-        width: 90%;
+        width: 80%;
         text-align: center;
+        padding: 15px 30px;
+    }
+
+    .ramayana {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .hindi {
+        font-size: 20px;
     }
 
     .ramayana1,
     .ramayana2 {
-        width: 90%;
+        width: 100%;
     }
 }

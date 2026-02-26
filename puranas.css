@@ -1,0 +1,232 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+    --bg-dark: #0f0c29;
+    --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    --gold: #FFD700;
+    --gold-dark: #B8860B;
+    --orange: #FF8C00;
+    --text-light: #e0e0e0;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Global Reset & Body --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed; /* Parallax effect */
+    color: var(--text-light);
+    min-height: 100vh;
+    padding-top: 80px; /* Space for fixed navbar */
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    
+    /* Glassmorphism */
+    background: rgba(15, 12, 41, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* Logo (Using CSS to add text since HTML div is empty) */
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- Main Container --- */
+.puranas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* --- Page Title --- */
+.page-title {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #fff;
+    
+    /* Gold Gradient Text */
+    background: linear-gradient(to right, #fff, var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    
+    animation: fadeInDown 1s ease-out;
+}
+
+/* --- List Grid Layout --- */
+.puranas-list {
+    list-style: none;
+    display: grid;
+    /* Responsive Grid: Auto-fit columns */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* --- Puranas Item Card --- */
+.puranas-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(5px);
+    
+    /* Staggered Entrance Animation */
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Staggered delays for each item (assuming 18 items) */
+.puranas-item:nth-child(1) { animation-delay: 0.1s; }
+.puranas-item:nth-child(2) { animation-delay: 0.2s; }
+.puranas-item:nth-child(3) { animation-delay: 0.3s; }
+.puranas-item:nth-child(4) { animation-delay: 0.4s; }
+.puranas-item:nth-child(5) { animation-delay: 0.5s; }
+.puranas-item:nth-child(n+6) { animation-delay: 0.6s; }
+
+/* Hover Effect for Card */
+.puranas-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* --- Link Styling inside Card --- */
+.puranas-link {
+    display: block;
+    padding: 25px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    
+    /* Flex to center text vertically if needed, or just block */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 80px;
+}
+
+.puranas-link:hover {
+    color: var(--gold);
+}
+
+/* Add a subtle icon or arrow on hover via CSS */
+.puranas-link::after {
+    content: '➤';
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--orange);
+}
+
+.puranas-item:hover .puranas-link::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- Animations --- */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+        font-size: 14px;
+    }
+
+    body {
+        padding-top: 130px; /* More space for taller navbar */
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .puranas-list {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}

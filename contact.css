@@ -1,0 +1,230 @@
+/* Import Professional Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+    --bg-dark: #0f0c29;
+    --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    --gold: #FFD700;
+    --gold-glow: rgba(255, 215, 0, 0.5);
+    --text-white: #e0e0e0;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Reset & Body --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-white);
+    min-height: 100vh;
+    padding-top: 80px; /* Space for fixed navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    
+    /* Glassmorphism */
+    background: rgba(15, 12, 41, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* Logo (Using CSS to add text since HTML div is empty) */
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--gold-glow);
+    cursor: pointer;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+/* Underline animation on hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- Contact Container --- */
+.contact-container {
+    max-width: 700px;
+    width: 90%;
+    margin: 40px auto;
+    
+    /* Glass Card Effect */
+    background: rgba(20, 20, 30, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    
+    /* Animation */
+    opacity: 0;
+    animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* --- Title --- */
+.contact-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    
+    /* Gold Gradient Text */
+    background: linear-gradient(to right, #fff, var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* --- Description --- */
+.contact-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+}
+
+/* --- Contact Info Area --- */
+.contact-info {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 15px;
+    transition: padding-left 0.3s ease;
+}
+
+.contact-info p:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.contact-info p:hover {
+    padding-left: 10px; /* Slight slide on hover */
+}
+
+/* Strong text styling */
+.contact-info strong {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    margin-right: 10px;
+}
+
+/* Link Styling (Email & Phone) */
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.contact-info a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 8px var(--gold-glow);
+    border-bottom-color: var(--gold);
+}
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    body {
+        padding-top: 120px;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+
+    .contact-container {
+        padding: 30px 20px;
+    }
+    
+    .contact-info {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,232 @@
+/* Import Professional Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+/* --- Body Setup --- */
+body {
+    margin: 0;
+    padding: 0;
+    
+    /* Background Image */
+    background-image: url("vedic.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    
+    /* Dark Vignette Overlay */
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
+    z-index: -1;
+}
+
+/* --- Main Login Card --- */
+.loginpage {
+    width: 90%;
+    max-width: 420px;
+    padding: 50px 40px;
+    text-align: center;
+    
+    /* Glassmorphism Card Effect */
+    background: rgba(20, 20, 20, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    /* Golden Border Frame */
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-top: 1px solid rgba(255, 215, 0, 0.6);
+    border-radius: 20px;
+    
+    /* Deep Shadow */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    
+    /* Animation */
+    opacity: 0;
+    animation: cardEntrance 0.8s ease-out forwards;
+}
+
+/* --- Header / Title --- */
+.login {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 0;
+    padding-bottom: 15px;
+    
+    /* Gold Gradient Text */
+    background: linear-gradient(180deg, #fff, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    position: relative;
+    display: inline-block;
+}
+
+/* Decorative line under title */
+.login::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    border-radius: 2px;
+}
+
+/* --- Details Container (Holds Inputs & Button) --- */
+.details {
+    /* Flexbox ensures inputs stack vertically inside */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between elements */
+    
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left; /* Align inputs to left for professional look */
+}
+
+/* --- Input Fields (Inside .details) --- */
+.details input {
+    width: 100%; /* Full width of container */
+    padding: 15px;
+    
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.details input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Input Focus State */
+.details input:focus {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: #FFD700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+/* --- Button Styling (Inside .details) --- */
+.details button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    
+    /* Gold/Saffron Gradient */
+    background: linear-gradient(135deg, #FFD700, #FF8C00);
+    
+    color: #2c1a00;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    
+    box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.details button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 140, 0, 0.5);
+}
+
+.details button:active {
+    transform: translateY(0);
+}
+
+/* --- Animations --- */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+        align-items: flex-start;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .loginpage {
+        width: 90%;
+        padding: 40px 25px;
+    }
+    
+    .details {
+        padding: 25px;
+        gap: 15px;
+    }
+}
+.loginbtn{
+  /* Login Button Styling */
+
+    /* Royal Gold Gradient */
+    background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
+    color: #2c1a00; /* Dark text for contrast */
+    
+    padding: 15px;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    
+    /* Soft Shadow */
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+    
+    /* Smooth Transition */
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+/* Hover Effect */
+.details button:hover {
+    transform: translateY(-3px); /* Moves up slightly */
+    box-shadow: 0 10px 25px rgba(255, 140, 0, 0.5); /* Bigger glow */
+}
